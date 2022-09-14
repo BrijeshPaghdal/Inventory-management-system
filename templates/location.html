@@ -25,8 +25,8 @@
                         <form id="formAddLocation" name='addLocation' method="POST">
                             <div class="form-group form-float">
                                 <div class="form-line" id="form">
+                                    <label class="">Location Name</label>
                                     <input type="text" class="form-control" name="locname" id="locname" required>
-                                    <label class="form-label">Location Name</label>
                                 </div>
                             </div>
                             <button class="btn btn-primary waves-effect" id="add" type="submit">ADD</button>
@@ -48,15 +48,16 @@
                                 </thead>
                                 <tbody>
 
-                                {% for row in data %}
-                                <tr>
-                                    <td>{{ row['location_name'] }}</td>
-                                    <td>
-                                        <button class='btn tblActnBtn' data-type='confirm' id='btnLocDelete' data-id='{{ row["_id"] }}'>
-                                            <i class='material-icons'>delete</i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                    {% for row in data %}
+                                    <tr>
+                                        <td>{{ row['location_name'] }}</td>
+                                        <td>
+                                            <button class='btn tblActnBtn' data-type='confirm' id='btnLocDelete'
+                                                data-id='{{ row["_id"] }}'>
+                                                <i class='material-icons'>delete</i>
+                                            </button>
+                                        </td>
+                                    </tr>
                                     {% endfor %}
                                 </tbody>
                             </table>

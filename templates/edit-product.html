@@ -28,88 +28,51 @@
                         <h2><strong>Edit</strong> Product</h2>
                     </div>
                     <div class="body">
-                        <form id="formEdit">
+                        <form id="formAddProduct" method="POST">
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="Prod_Name" maxlength="30" minlength="3" value = "" required />
+                                    <label class="">Product ID</label>
+                                    <input type="text" class="form-control" name="Prod_Id" id="Prod_Id" maxlength="50"
+                                        minlength="3" required />
 
-                                    <label class="form-label">Product Name</label>
+
                                 </div>
-                                <div class="help-info">Min. 3, Max. 30 characters</div>
+                                <div class="help-info">Min. 3, Max. 50 characters</div>
                             </div>
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="Prod_Company" maxlength="30" minlength="3" value = ""required />
+                                    <label class="">Product Name</label>
+                                    <input type="text" class="form-control" name="Prod_Name" id="Prod_Name"
+                                        maxlength="50" minlength="3" required />
 
-                                    <label class="form-label">Product Company Name</label>
                                 </div>
-                                <div class="help-info">Min. 3, Max. 30 characters</div>
-                            </div>
-                            <div class="form-group default-select select2Style">
-                                <select class="form-control select2" name = "Cate_Name" id = "Cate_Name">
-                                    <!-- <option disabled selected>Choose Product Category</option> -->
-
-                                </select>
+                                <div class="help-info">Min. 3, Max. 50 characters</div>
                             </div>
 
-                            <div class="form-group default-select select2Style">
-                                <select class="form-control select2" data-placeholder="Select" name="Sub_C_Name" id="Sub_C_Name">
-                                    <option value="" disabled selected>
-                                        Choose Product Sub Category
-                                    </option>
-
-                                </select>
-                            </div>
 
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="number" class="form-control" name="Price" value = "" maxlength="8" minlength="0"  required />
-                                    <label class="form-label">Product Price</label>
+                                    <label class="">Product Price</label>
+                                    <input type="number" class="form-control" name="Price" id="Price" maxlength="8"
+                                        minlength="1" min="1" required />
                                 </div>
                                 <div class="help-info">Price only</div>
                             </div>
 
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <input type="text" class="form-control" name="Avail_Qua" maxlength="10" minlength="1" value = "" required />
+                                    <label class="">Product Quantity</label>
 
-                                    <label class="form-label">Product Quantity</label>
+                                    <input type="number" class="form-control" name="Avail_Qua" id="Avail_Qua"
+                                        maxlength="8" minlength="1" min="0" required />
+
                                 </div>
                                 <div class="help-info"></div>
                             </div>
 
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <textarea name="Prod_Description" cols="30" rows="5" class="form-control no-resize" required></textarea>
-                                    <label class="form-label">Product Description</label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <h2 class="card-inside-title">Product Suggest For</h2>
-
-                            </div>
-
-                            <div class="form-group form-float">
-                                <h2 class="card-inside-title">Image Upload</h2>
-                                <div class="card-inside-title">
-
-                                </div>
-                                <div class="file-field input-field">
-                                    <div class="btn">
-                                        <span>Image</span>
-                                        <input type="file" name = "image[]" multiple />
-                                    </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text" value="" placeholder="Upload one or more Image .... All images will be replaced by new one" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <input type="hidden" name="prod_id" value="<?php echo $prod_id ?>">
-
-                            <button class="btn btn-primary waves-effect" type="submit">
-                                Edit Product
+                            <button class="btn btn-primary waves-effect" type="submit" id="add-product"
+                                name="add-product" value="SUBMIT">
+                                SUBMIT
                             </button>
                         </form>
                     </div>
