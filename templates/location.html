@@ -1,0 +1,73 @@
+{% include 'inc/header.html' %}
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="breadcrumb breadcrumb-style">
+                        <li class="breadcrumb-item">
+                            <h4 class="page-title">Inventory</h4>
+                        </li>
+                        <li class="breadcrumb-item bcrumb-1">
+                            <a href="/">
+                                <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Location</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="card">
+                    <div class="body">
+                        <h2 class="card-inside-title">Add Location</h2>
+                        <form id="formAddLocation" name='addLocation' method="POST">
+                            <div class="form-group form-float">
+                                <div class="form-line" id="form">
+                                    <input type="text" class="form-control" name="locname" id="locname" required>
+                                    <label class="form-label">Location Name</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary waves-effect" id="add" type="submit">ADD</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                <div class="card">
+                    <div class="body">
+                        <div class="table-responsive" id="category-list">
+                            <table class="table table-hover js-basic-example contact_list js-sweetalert">
+                                <thead>
+                                    <tr>
+                                        <th>Location Name</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                {% for row in data %}
+                                <tr>
+                                    <td>{{ row['location_name'] }}</td>
+                                    <td>
+                                        <button class='btn tblActnBtn' data-type='confirm' id='btnLocDelete' data-id='{{ row["_id"] }}'>
+                                            <i class='material-icons'>delete</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+{% include 'inc/footer.html' %}
