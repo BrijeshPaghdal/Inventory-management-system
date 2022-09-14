@@ -23,6 +23,12 @@ you can also edit product by clicking on "pen icon" and delete the product by cl
 
 ![inventory](https://github.com/BrijeshPaghdal/Inventory-management-system/tree/master/Screenshots/inventory.png)
 
-<h5>Location :</h5>
+![add-Product](https://github.com/BrijeshPaghdal/Inventory-management-system/tree/master/Screenshots/add-product.png)
 
+<h5>Location :</h5>
+hear in location page you can add and see the locations stored in table
+
+![location](https://github.com/BrijeshPaghdal/Inventory-management-system/tree/master/Screenshots/location.png)
+
+![add-location](https://github.com/BrijeshPaghdal/Inventory-management-system/tree/master/Screenshots/add-location.png)
 </p>
