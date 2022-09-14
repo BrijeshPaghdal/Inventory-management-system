@@ -26,6 +26,7 @@ $(document).ready(function () {
 
 
     function showCancelMessage(productId) {
+      var server_data = { "prod_id": productId };
       swal({
         title: "Are you sure?",
         text: "You will not be able to recover this product detail!",
@@ -41,15 +42,31 @@ $(document).ready(function () {
           $.ajax({
             url: 'remove-product',
             type: 'POST',
-            data: {
-              prod_id: productId
-            },
+            data: JSON.stringify(server_data),
+            contentType: "application/json",
+            dataType: 'json',
             success: function (data) {
-              if (data == 1) {
-                swal("Deleted!", "Your product has been deleted.", "success");
-                showData();
-              } else if (data == 2) {
-                swal("Cancelled", "Error Occured in deleting product", "error");
+              if (data.Result == 'Success') {
+                swal({
+                  title: 'Deleted!',
+                  text: 'Product Deleted Successfully',
+                  type: 'success',
+                  showCancelButton: false,
+                  confirmButtonColor: '#DD6B55',
+                  confirmButtonText: 'OK',
+                  closeOnConfirm: false,
+                  closeOnCancel: false,
+                }, function (isConfirm) {
+                  if (isConfirm) {
+                    location.reload();
+                  }
+                });
+              } else {
+                swal(
+                  'Cancelled',
+                  'Error Occured in deleting Product',
+                  'error'
+                );
               }
             }
           });

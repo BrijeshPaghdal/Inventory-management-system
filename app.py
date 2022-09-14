@@ -36,8 +36,10 @@ def addProductPage():
 @app.route('/remove-product', methods=['GET', 'POST'])
 def removeProduct():
     if request.method == "POST":
-        data = request.prod_id
-        print(data)
+        data = request.get_json()
+        id = data['prod_id']
+        results = removeFromDB(product, str(id))
+    return jsonify(results)
 
 
 @app.route('/ajax-add-product', methods=['GET', 'POST'])
@@ -90,8 +92,8 @@ def addLocation():
     if request.method == "POST":
         data = request.get_json()
         # print(data)
-        data = {"_id": random.randint(
-            1, 10000), "location_name": data['loc_name']}
+        data = {"_id": str(random.randint(
+            1, 10000)), "location_name": data['loc_name']}
         results = addtoDB(location, data)
     return jsonify(results)
 
@@ -101,13 +103,12 @@ def removeLocation():
     if request.method == "POST":
         data = request.get_json()
         id = data['loc_id']
-        print(type(id))
         results = removeFromDB(location, id)
     return jsonify(results)
 
 
 def removeFromDB(table, id):
-    x = table.delete_one({"_id": id})
+    x = table.delete_one({"_id": str(id)})
     print(x)
     try:
         results = {'Result': 'Success'}
