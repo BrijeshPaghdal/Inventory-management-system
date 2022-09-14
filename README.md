@@ -16,5 +16,6 @@
 
 <h4>About Inventory management system</h4>
 <p align="left"> 
+![inventory](https://github.com/BrijeshPaghdal/Inventory-management-system/tree/master/Screenshots/inventory.png)
 
 </p>
