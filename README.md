@@ -16,6 +16,12 @@
 
 <h4>About Inventory management system</h4>
 <p align="left"> 
+
+<h5>Inventory :</h5>
+The porduct list will be shown in inex page where you can see product and also by clicking "ADD NEW PRODUCT" you can enter new product details.
+you can also edit product by clicking on "pen icon" and delete the product by clicking on "dustbin icon". 
 ![inventory](https://github.com/BrijeshPaghdal/Inventory-management-system/tree/master/Screenshots/inventory.png)
+
+<h5>Location :</h5>
 
 </p>
