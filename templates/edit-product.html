@@ -28,12 +28,12 @@
                         <h2><strong>Edit</strong> Product</h2>
                     </div>
                     <div class="body">
-                        <form id="formAddProduct" method="POST">
+                        <form id="formEdit" method="POST">
                             <div class="form-group form-float">
                                 <div class="form-line">
                                     <label class="">Product ID</label>
                                     <input type="text" class="form-control" name="Prod_Id" id="Prod_Id" maxlength="50"
-                                        minlength="3" required />
+                                        minlength="3" value="{{data['_id']}}" required />
 
 
                                 </div>
@@ -43,7 +43,7 @@
                                 <div class="form-line">
                                     <label class="">Product Name</label>
                                     <input type="text" class="form-control" name="Prod_Name" id="Prod_Name"
-                                        maxlength="50" minlength="3" required />
+                                        maxlength="50" minlength="3" value="{{data['prod_name']}}" required />
 
                                 </div>
                                 <div class="help-info">Min. 3, Max. 50 characters</div>
@@ -54,7 +54,7 @@
                                 <div class="form-line">
                                     <label class="">Product Price</label>
                                     <input type="number" class="form-control" name="Price" id="Price" maxlength="8"
-                                        minlength="1" min="1" required />
+                                        minlength="1" min="1" value="{{data['price']}}" required />
                                 </div>
                                 <div class="help-info">Price only</div>
                             </div>
@@ -64,14 +64,14 @@
                                     <label class="">Product Quantity</label>
 
                                     <input type="number" class="form-control" name="Avail_Qua" id="Avail_Qua"
-                                        maxlength="8" minlength="1" min="0" required />
+                                        maxlength="8" minlength="1" min="0" value="{{data['quantity']}}" required />
 
                                 </div>
                                 <div class="help-info"></div>
                             </div>
 
-                            <button class="btn btn-primary waves-effect" type="submit" id="add-product"
-                                name="add-product" value="SUBMIT">
+                            <button class="btn btn-primary waves-effect" type="submit" id="update-product"
+                                data-id="{{id}}" name="update-product" value="SUBMIT">
                                 SUBMIT
                             </button>
                         </form>
