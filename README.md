@@ -15,4 +15,4 @@
     user@user:~/Inventory management system $ <b>python app.py</b><br>
 
 <h4>About Inventory management system</h4>
-<img src="https://github.com/BrijeshPaghdal/Inventory-management-system/tree/master/Screenshots/inventory.png" />
+<img height=200 width=500 src="https://github.com/BrijeshPaghdal/Inventory-management-system/tree/master/Screenshots/inventory.png" />
