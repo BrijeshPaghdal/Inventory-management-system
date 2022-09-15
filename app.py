@@ -20,6 +20,7 @@ client = MongoClient('mongodb://localhost:27017/')
 db = client["inventory"]
 product = db["product"]
 location = db["location"]
+movements = db["movements"]
 
 
 @app.route('/')
@@ -105,6 +106,24 @@ def removeLocation():
         id = data['loc_id']
         results = removeFromDB(location, id)
     return jsonify(results)
+
+
+@app.route('/movements')
+def movements():
+    data = fetchData(product)
+    return render_template('movements.html', data=data)
+
+
+@app.route('/add-movements', methods=['GET', 'POST'])
+def addMovementsPage():
+    prod = product.find({}, {"_id": '', "prod_name": ''})
+    prod = (todo for todo in prod)
+
+    loca = location.find({}, {"_id": '', "location_name": ''})
+    loca = (todo for todo in loca)
+    for x in loca:
+        print(x)
+    return render_template('add-movements.html', prod=prod, loca=loca)
 
 
 def removeFromDB(table, id):
