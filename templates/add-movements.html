@@ -42,30 +42,22 @@
                                             {% endfor %}
                                         </select>
                                     </div>
-
-
                                 </div>
                             </div>
-                            {{loc}}<br>
-                            {{prod}}
-                            {% for i in prod %}
-                            {{ i['prod_name'] }}
-                            {% endfor %}
+                            {{loc}}
                             <div class="form-group form-float">
                                 <div class="form-line">
-                                    <label class="">From Location</label>
+                                    <label class="">Location</label>
                                     <div class="form-group default-select select2Style">
-                                        <select name="from_loc_name" id="from_loc_name" class="form-control select2">
-                                            <option selected disabled>Select Location</option>
-                                            {% for row in loca %}
-                                            <option data-id="{{ row['_id'] }}">{{ row['location_name'] }}</option>
+                                        <select name="location" id="location" class="form-control select2">
+                                            <option selected disabled data-id="">Select Product</option>
+                                            {% for row in prod %}
+                                            <option data-id="{{ int(row['_id']) }}">{{ row['prod_name'] }}</option>
                                             {% endfor %}
                                         </select>
                                     </div>
-
                                 </div>
                             </div>
-
 
                             <div class="form-group form-float">
                                 <div class="form-line">

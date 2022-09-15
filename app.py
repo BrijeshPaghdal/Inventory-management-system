@@ -119,11 +119,12 @@ def addMovementsPage():
     prod = product.find({}, {"_id": '', "prod_name": ''})
     prod = (todo for todo in prod)
 
-    loca = location.find({}, {"_id": '', "location_name": ''})
-    loca = (todo for todo in loca)
-    for x in loca:
+    loc = location.find()
+    loc = (todo for todo in loc)
+    print(loc)
+    for x in loc:
         print(x)
-    return render_template('add-movements.html', prod=prod, loca=loca)
+    return render_template('add-movements.html', prod=prod, loc=loc)
 
 
 def removeFromDB(table, id):
